@@ -10,9 +10,9 @@ function FormSignin() {
     const handlerClick = (e) => {
         e.preventDefault();
         const formData = new FormData(form.current);
-        console.log();
+        console.log(formData.get('contraseña'));
         
-        let uri = 'http://34.225.239.102/api/autobus/register';
+        let uri = 'http://34.225.239.102/api/registrar/usuario';
         
         let options = {
             method: 'POST',
@@ -20,13 +20,10 @@ function FormSignin() {
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify({
-               clave: formData.get('clave'),
-               placa: formData.get('placa'),
-               numasientos: formData.get('asientos'),
-               fecha: formData.get('fecha'),
-               tipo: formData.get('tipo'),
-               nombre: formData.get('chofer'),
-               licencia:  String(Math.floor(Math.random() * (9999 - 1000) + 1000))
+               nombre: formData.get('nombre'),
+               usuario: formData.get('usuario'),
+               correo: formData.get('correo'),
+               contrasenia: formData.get('contraseña'),
             })
         }
 
