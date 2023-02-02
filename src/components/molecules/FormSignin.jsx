@@ -57,7 +57,6 @@ function FormSignin() {
             <button onClick={handlerClick}>Registrarse</button>
             </form>
             <Link to={'/'}>Inicia sesión</Link>
-            <Link to={'/product'}>Registra un autobus</Link>
         </div>
      );
 }
