@@ -1,0 +1,33 @@
+.divFormSn
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: white;
+    height: 70%;
+    border-radius: 8%;
+}
+
+.formSn
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.formSn input
+{
+    margin: 5px;
+}
+.formSn button
+{
+    width: 30%;
+    height: 30px;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    border-radius: 8px;
+}
