@@ -1,16 +1,16 @@
 import {Link} from 'react-router-dom';
 import {useRef} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../atoms/Logo'
 import '../../assets/styles/FormSignin.css';
 
 
 function FormSignin() {
     const form = useRef();
-    
+    const navigate = useNavigate();
     const handlerClick = (e) => {
         e.preventDefault();
         const formData = new FormData(form.current);
-        console.log(formData.get('contraseña'));
         
         let uri = 'http://34.225.239.102/api/registrar/usuario';
         
@@ -29,7 +29,14 @@ function FormSignin() {
 
         fetch(uri, options)
         .then((response) => response.json())
-        .then((data) => {alert(data.message)});
+        .then((data) => {
+            alert(data.message)
+            if(data.status == true)
+            {
+                navigate("/");
+            }
+        
+        });
     
 
         
